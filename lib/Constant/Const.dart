@@ -1,1 +1,1 @@
-var url = "http://isi dengan ip config laptop masing-masing ";
+var url = "http://192.168.1.253";

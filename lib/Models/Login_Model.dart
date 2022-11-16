@@ -37,15 +37,15 @@ class Data {
     required this.tanggalInput,
     required this.modified,
   });
-  String iduser;
-  String nama;
-  String profesi;
-  String email;
-  String password;
-  String roleId;
-  String isActive;
-  DateTime tanggalInput;
-  String modified;
+  String? iduser;
+  String? nama;
+  String? profesi;
+  String? email;
+  String? password;
+  String? roleId;
+  String? isActive;
+  DateTime? tanggalInput;
+  String? modified;
   factory Data.fromJson(Map<String, dynamic> json) => Data(
         iduser: json["iduser"],
         nama: json["nama"],
@@ -65,8 +65,7 @@ class Data {
         "password": password,
         "role_id": roleId,
         "is_active": isActive,
-        "tanggal_input":
-            "${tanggalInput.year.toString().padLeft(4, '0')}-${tanggalInput.month.toString().padLeft(2, '0')}-${tanggalInput.day.toString().padLeft(2, '0')}",
+        "tanggal_input":"${tanggalInput?.year.toString().padLeft(4, '0')}-${tanggalInput?.month.toString().padLeft(2, '0')}-${tanggalInput?.day.toString().padLeft(2, '0')}",
         "modified": modified,
       };
 }
