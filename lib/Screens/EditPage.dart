@@ -50,10 +50,10 @@ class _EditPageState extends State<EditPage> {
                 Container(
                   width: MediaQuery.of(context).size.width / 1.4,
                   child: FormBuilderTextField(
-                    name: "isi_motivasi",
+                    name: "Masukan_Motivasi",
                     controller: isiMotivasiC,
                     decoration: InputDecoration(
-                      labelText: "New Data",
+                      labelText: "Masukan Motivasi Baru",
                       border: OutlineInputBorder(),
                       contentPadding: EdgeInsets.only(left: 10),
                     ),
@@ -66,7 +66,7 @@ class _EditPageState extends State<EditPage> {
                               {
                                 Navigator.pop(context),
                                 Flushbar(
-                                  message: "Berhasil Update & Refresh dlu",
+                                  message: "Berhasil Update & Refresh halaman",
                                   duration: Duration(seconds: 5),
                                   backgroundColor: Colors.green,
                                   flushbarPosition: FlushbarPosition.TOP,

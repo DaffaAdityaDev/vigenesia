@@ -53,8 +53,9 @@ class _LoginState extends State<Login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Image.asset("assets/images/undraw_Login.png", width: 400, height: 400,),
                 Text(
-                  "Login Area",
+                  "Login",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(height: 50), // <-- Kasih Jarak Tinggi : 50px

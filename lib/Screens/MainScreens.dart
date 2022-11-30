@@ -29,7 +29,7 @@ class _MainScreensState extends State<MainScreens> {
       "iduser": widget.idUser,
     }; // [Tambah IDUSER -> Widget.iduser]
     // print(body);
-      print("test" + widget.idUser.toString());
+      // print("test" + widget.idUser.toString());
     try {
       Response response = await dio.post(
           "$baseurl/vigenesia/api/dev/POSTmotivasi/",
@@ -120,7 +120,7 @@ class _MainScreensState extends State<MainScreens> {
                       .center, // <-- Berfungsi untuk atur nilai X jadi tengah
                   children: [
                     SizedBox(
-                      height: 40,
+                      height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -142,7 +142,9 @@ class _MainScreensState extends State<MainScreens> {
                             })
                       ],
                     ),
-                    SizedBox(height: 20), // <-- Kasih Jarak Tinggi : 50px
+                    Image.asset("assets/images/undraw_search.png", width: 300, height: 300,),
+                    Text("Masukan Motivasi", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),),
+                    // SizedBox(height: 5), // <-- Kasih Jarak Tinggi : 50px
                     FormBuilderTextField(
                       controller: isiController,
                       name: "isi_motivasi",
@@ -209,8 +211,12 @@ class _MainScreensState extends State<MainScreens> {
                                             shrinkWrap: true,
                                             children: [
                                               Container(
-                                                  child:
-                                                      Text(item.isiMotivasi.toString())),
+                                                  child: Center(
+                                                    child: Padding(
+                                                      padding: const EdgeInsets.only(top: 10.0),
+                                                      child: Text(item.isiMotivasi.toString()),
+                                                    ),
+                                                  )),
                                             ],
                                           ),
                                         ),
@@ -247,20 +253,23 @@ class _MainScreensState extends State<MainScreens> {
                                                     children: [
                                                   Text(item.isiMotivasi.toString()),
                                                   Row(children: [
-                                                    TextButton(
-                                                      child:
-                                                          Icon(Icons.settings),
-                                                      onPressed: () {
-                                                        String id;
-                                                        String isi_motivasi;
-                                                        Navigator.push(
-                                                            context,
-                                                            MaterialPageRoute(
-                                                              builder: (BuildContextcontext) => EditPage(
-                                                                      id: item.id,
-                                                                      isi_motivasi: item.isiMotivasi),
-                                                            ));
-                                                      },
+                                                    
+                                                    Center(
+                                                      child: TextButton(
+                                                        child:
+                                                            Icon(Icons.settings),
+                                                        onPressed: () {
+                                                          String id;
+                                                          String isi_motivasi;
+                                                          Navigator.push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                builder: (BuildContextcontext) => EditPage(
+                                                                        id: item.id,
+                                                                        isi_motivasi: item.isiMotivasi),
+                                                              ));
+                                                        },
+                                                      ),
                                                     ),
                                                     TextButton(
                                                       child: Icon(Icons.delete),
